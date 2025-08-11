@@ -1,0 +1,111 @@
+:root {
+  --clr-bg: #fffaf5;
+  --clr-bg-alt: #fdf6ec;
+  --clr-bg: white;
+  --clr-bg-alt: white;
+  --clr-shadow: 0 4px 24px rgba(0,0,0,0.04);
+  --clr-primary: #8ca6eb; /* pastel purple */
+  --clr-primary: #b4c5f5; /* pastel purple */
+  --clr-primary-dark: #8c9fe1; /* slightly deeper pastel for hover */
+  --clr-secondary: #f5b0c4;
+  --clr-primary: #f5b0c4;
+  --clr-primary-dark:rgb(237, 143, 170);
+  --clr-dark: #525252;
+  --clr-light: #fff;
+  --font-title: 'Space Mono', sans-serif;
+  --font-body: 'Space Mono', Arial, Helvetica, sans-serif;
+  --font-size-title: 2.2rem;
+  --font-size-header: 22px;
+  --font-size-section: 18px;
+  --font-size-menu: 15px;
+  --font-size-normal: 16px;
+  --font-size-sm: 14px;
+  --font-size-xs: 12px;
+  --radius: 16px;
+  --radius-sm: 6px;
+  --spacing-lg: 2rem;
+  --spacing-header: 24px;
+  --spacing-section: 24px;
+  --spacing-section-sm: 16px;
+  --spacing-menu: 8px;
+  --spacing-top: 40px;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #fdf6ec;
+  color: var(--clr-dark);
+  font-family: var(--font-body);
+  font-size: 16px;
+  background: var(--clr-bg-alt);
+  background: #fdf6ec;
+  color: var(--clr-dark);
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+a {
+  font-weight: 500;
+  color: var(--clr-primary);
+  text-decoration: inherit;
+}
+a:hover {
+  color: var(--clr-primary-dark);
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+  font-family: var(--ff-primary);
+}
+
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: var(--font-body);
+  background-color: var(--clr-primary);
+  color: var(--clr-light);
+  cursor: pointer;
+  transition: border-color 0.25s, background 0.25s, color 0.25s;
+}
+/* button:hover {
+  border-color: var(--clr-primary-dark);
+  background: var(--clr-primary-dark);
+  color: var(--clr-light);
+} */
+button:focus,
+button:focus-visible {
+  outline: 4px auto var(--clr-primary);
+}
+
+th, td {
+  font-family: var(--ff-primary);
+}
+
+pre, code {
+  font-family: var(--ff-mono);
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+  a:hover {
+    color: #747bff;
+  }
+  button {
+    background-color: #f9f9f9;
+  }
+}
