@@ -1,1 +1,1 @@
-"# video-query-ai" 
+# Video Query AI – Video Search Application
