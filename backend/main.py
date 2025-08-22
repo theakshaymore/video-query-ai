@@ -9,6 +9,10 @@ app = FastAPI()
 # Serve static files for frames and uploaded videos under /static
 frames_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), '.data/frames'))
 uploaded_videos_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), '.data/uploaded_videos'))
+
+os.makedirs(frames_dir, exist_ok=True)
+os.makedirs(uploaded_videos_dir, exist_ok=True)
+
 app.mount("/static/frames", StaticFiles(directory=frames_dir), name="frames")
 app.mount("/static/videos", StaticFiles(directory=uploaded_videos_dir), name="uploaded_videos")
 

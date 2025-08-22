@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const API = import.meta.env.VITE_API_URL || "http://localhost:8000";
+const API = import.meta.env.VITE_API_URL || "http://localhost:8000/api";
 
 export default function Upload({ onUpload }) {
   const [file, setFile] = useState(null);
@@ -12,7 +12,7 @@ export default function Upload({ onUpload }) {
     setBusy(true);
     setMsg("Uploading…");
     const fd = new FormData();
-    fd.append("video", file);
+    fd.append("file", file);
     const res = await fetch(`${API}/upload`, { method: "POST", body: fd });
     if (!res.ok) {
       setMsg("Upload failed");
