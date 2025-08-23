@@ -14,7 +14,7 @@ export default function Search({ videoId }) {
       const res = await fetch(`${API}/search`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ videoId, query }),
+        body: JSON.stringify({ video_id: videoId, query }),
       });
       const data = await res.json();
       setResults(data.items || []);

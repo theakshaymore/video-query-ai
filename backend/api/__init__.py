@@ -138,3 +138,14 @@ async def search_frames(request: Request):
             "video_name": video_name
         })
     return {"results": matches} 
+
+@router.get("/debug/chroma")
+def debug_chroma():
+    import os
+    from chromadb import PersistentClient
+    path = os.getenv("CHROMA_PERSIST_DIR", os.path.abspath(os.path.join(os.path.dirname(__file__), ".data", "chroma")))
+    client = PersistentClient(path=path)
+    info = []
+    for c in client.list_collections():
+        info.append({"name": c.name, "count": c.count()})
+    return {"path": path, "collections": info}
