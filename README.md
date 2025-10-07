@@ -1,8 +1,8 @@
-# 🎥 Video Query AI – Search Videos Like Text
+# 🎥 RecallAI — Search Videos Like Text
 
-## 🚀 What is Video Query AI?
+## 🚀 What is RecallAI?
 
-Video Query AI is a **privacy-first, local application** that lets you search through your video collection using natural language. Instead of scrubbing through timelines manually, just type what you’re looking for, and the app instantly finds the matching scenes.
+RecallAI or ( Video Query AI ) is a privacy-first, local application that lets you search through your video collection using natural language. Instead of scrubbing through timelines manually, just type what you’re looking for, and the app instantly finds the matching scenes.
 
 - 🔒 100% local – no cloud uploads, your data stays on your machine
 - ⚡ Fast semantic search powered by vector embeddings
@@ -33,31 +33,31 @@ Video Query AI is a **privacy-first, local application** that lets you search th
 4. **Captioning** – AI model (LLaVA via Ollama) describes frames
 5. **Embedding** – Descriptions converted into vector embeddings
 6. **Storage** – Embeddings + metadata saved in ChromaDB
-7. **Updates** – Live progress sent via WebSockets (resumable)
+7. **Updates** – Live progress sent frontend via WebSockets
 
 ### 🔍 Search Flow
 
 1. User enters a query
 2. Query is embedded using the same model
 3. ChromaDB performs vector similarity search
-4. Top matches returned with timestamps + thumbnails
+4. Results are returned with matching timestamps and thumbnail previews
 
 ---
 
 ## 🏗️ Tech Stack
 
-- **Frontend**: React + TypeScript (Vite, React Router)
+- **Frontend**: React + Javascript (Vite, React Router)
 - **Backend**: FastAPI (REST + WebSockets)
 - **Job Queue**: Redis + RQ
-- **Database**: ChromaDB (vector search)
-- **Video Processing**: `ffmpeg`
-- **AI Models**: LLaVA (captions) + Sentence Transformers (embeddings)
+- **Database**: ChromaDB (vector storage)
+- **Video Processing**: ffmpeg
+- **AI Models**: LLaVA (for captions) + Sentence Transformers (for embeddings)
 
 ---
 
 ## 📂 Project Setup
 
-### 1. Clone the repo
+### 1. Clone the repository
 
 ```bash
 git clone https://github.com/your-username/video-query-ai.git
@@ -89,4 +89,10 @@ python -m rq worker -u redis://localhost:6379/0 video-jobs
 
 ## ✅ Current Status
 
-Currently in beta – core upload, indexing, and search flows are working. More improvements on UX and performance are planned.
+- Currently in beta — the core upload, indexing, and search flows are fully functional.
+- Next up: improving UX, optimizing performance, and adding advanced filtering options.
+
+## 💡 Vision
+
+Video Query AI ( RecallAI ) aims to make your personal video archive searchable, private, and intelligent — just like text.
+It’s an experiment in bridging human language and visual memory, locally and securely.
